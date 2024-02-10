@@ -1,9 +1,11 @@
 // Resolvers define how to fetch the types defined in your schema.
 // This resolver retrieves books from the "books" array above.
-import { books } from "@/app/api/graphql";
+import { getUserById, getUsers } from "./users";
+import { Resolvers } from "../__generated__/types";
 
-export const resolvers = {
+export const resolvers: Resolvers = {
     Query: {
-        books: () => books,
-    },
+        user: getUserById,
+        users: getUsers
+    }
 };
