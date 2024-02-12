@@ -4,7 +4,7 @@ type User {
   lastName: String!
   email: String!
   luxID: String!
-  bookingsMade: [Booking!]!
+  bookingsMade: [Booking!]
   role: ROLE!
 }
 
@@ -22,7 +22,9 @@ type Room {
   id: ID!
   name: String!
   active: Boolean!
-  bookings: [Booking!]!
+  bookings: [Booking!]
+  timeStart: Float!
+  timeEnd: Float!
 }
 
 enum ROLE {
@@ -34,9 +36,43 @@ enum ROLE {
 type Query {
   users: [User!]!
   user(id: ID!): User
+  getDateBookings(date: String!): [Booking!]!
+  getSingleBooking(bookingID: ID!): Booking
+  getAllRooms: [Room!]!
+  getSingleRoom(roomID: ID!, dateFrom: String!, dateTo: String!): Room
 }
 
 # Mutations for creating and updating the entities
 type Mutation {
-  createUser(firstName: String!, lastName: String!, email: String!, luxID: String!, password: String!, role: ROLE): User!
+  createUser(
+    firstName: String!
+    lastName: String!
+    email: String!
+    luxID: String!
+    password: String!
+  ): User!
+  deleteUser(userID: ID!): User!
+  updateUser(
+    userID: ID!
+    firstName: String
+    lastName: String
+    password: String
+  ): User!
+  updateRoomStatus(roomID: ID!, status: Boolean!): Room!
+  createNewRoom(
+    name: String!
+    active: Boolean!
+    timeStart: Float!
+    timeEnd: Float!
+  ): Room!
+  updateRoom(roomID: ID!, name: String, timeStart: Float, timeEnd: Float): Room!
+  deleteRoom(roomID: ID!): Room!
+  createNewBooking(
+    userID: ID!
+    time: String!
+    duration: Float!
+    roomID: String!
+  ): Booking!
+  updateBooking(bookingID: ID!, time: String, duration: Float): Booking!
+  deletebooking(bookingID: ID!): Booking!
 }

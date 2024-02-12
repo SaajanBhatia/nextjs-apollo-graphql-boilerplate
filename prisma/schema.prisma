@@ -32,10 +32,12 @@ model Booking {
 }
 
 model Room {
-  id       String    @id @unique @default(cuid())
-  name     String
-  active   Boolean   @default(true)
-  bookings Booking[]
+  id        String    @id @unique @default(cuid())
+  name      String
+  active    Boolean   @default(true)
+  bookings  Booking[]
+  timeStart Decimal
+  timeEnd   Decimal
 }
 
 enum ROLE {
