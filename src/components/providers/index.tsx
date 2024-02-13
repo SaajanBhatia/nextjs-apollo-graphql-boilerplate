@@ -7,6 +7,7 @@ import { CacheProvider } from '@chakra-ui/next-js';
 import { SessionProvider } from 'next-auth/react';
 
 import { ApolloWrapper } from '@/lib/apollo/client';
+import theme from './theme';
 
 interface LayoutProps {
     children: ReactNode
@@ -17,11 +18,11 @@ export const Providers: FC<LayoutProps> = ({ children }) => {
         <>
             <SessionProvider>
                 <ApolloWrapper>
-                    <CacheProvider>
-                        <ChakraProvider>
+                    {/* <CacheProvider> */}
+                        <ChakraProvider theme={theme}>
                             {children}
                         </ChakraProvider>
-                    </CacheProvider>
+                    {/* </CacheProvider> */}
                 </ApolloWrapper>
             </SessionProvider>
         </>
