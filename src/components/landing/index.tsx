@@ -1,10 +1,12 @@
 'use client'
 
 import { Stack, Flex, Button, Text, VStack, useBreakpointValue } from '@chakra-ui/react'
+import Link from 'next/link'
 
 const LUXURIO_IMAGE_URL = 'https://mcaleer-rushe.co.uk/site/wp-content/uploads/2020/05/Luxurio-Loughborough-I.jpg'
 
 export default function LandingHeroSection() {
+
     return (
         <Flex
             w={'full'}
@@ -28,20 +30,24 @@ export default function LandingHeroSection() {
                         Welcome to the Luxurio Booking System
                     </Text>
                     <Stack direction={'row'}>
-                        <Button
-                            bg={'blue.400'}
-                            rounded={'full'}
-                            color={'white'}
-                            _hover={{ bg: 'blue.500' }}>
-                            Sign In
-                        </Button>
-                        <Button
-                            bg={'whiteAlpha.300'}
-                            rounded={'full'}
-                            color={'white'}
-                            _hover={{ bg: 'whiteAlpha.500' }}>
-                            Sign Up
-                        </Button>
+                        <Link href={'/signin'}>
+                            <Button
+                                bg={'blue.400'}
+                                rounded={'full'}
+                                color={'white'}
+                                _hover={{ bg: 'blue.500' }}>
+                                Sign In
+                            </Button>
+                        </Link>
+                        <Link href={'/signup'}>
+                            <Button
+                                bg={'whiteAlpha.300'}
+                                rounded={'full'}
+                                color={'white'}
+                                _hover={{ bg: 'whiteAlpha.500' }}>
+                                Sign Up
+                            </Button>
+                        </Link>
                     </Stack>
                 </Stack>
             </VStack>

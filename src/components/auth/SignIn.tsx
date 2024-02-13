@@ -13,11 +13,14 @@ import {
     Text,
     useColorModeValue,
 } from '@chakra-ui/react'
+import { FormEvent } from 'react'
 
 type SignInProps = {
     username: string,
     password: string,
-    handleSignIn: () => Promise<void>
+    updateUsername: React.Dispatch<React.SetStateAction<string>>,
+    updatePassword: React.Dispatch<React.SetStateAction<string>>,
+    handleSignIn: (e: FormEvent) => Promise<void>
 }
 
 export default function SimpleCard(props: SignInProps) {
@@ -31,42 +34,54 @@ export default function SimpleCard(props: SignInProps) {
                 <Stack align={'center'}>
                     <Heading fontSize={'4xl'}>Sign in to your account</Heading>
                     <Text fontSize={'lg'} color={'gray.600'}>
-                        to enjoy all of our cool <Box as="span" color={'blue.400'}>features</Box> ✌️
+                        to use <Box as="span" color={'blue.400'}>Lux Booking System</Box> ✌️
                     </Text>
                 </Stack>
-                <Box
-                    rounded={'lg'}
-                    bg={useColorModeValue('white', 'gray.700')}
-                    boxShadow={'lg'}
-                    p={8}>
-                    <Stack spacing={4}>
-                        <FormControl id="email">
-                            <FormLabel>Email address</FormLabel>
-                            <Input type="email" placeholder='Enter your email' />
-                        </FormControl>
-                        <FormControl id="password">
-                            <FormLabel>Password</FormLabel>
-                            <Input type="password" />
-                        </FormControl>
-                        <Stack spacing={10}>
-                            <Stack
-                                direction={{ base: 'column', sm: 'row' }}
-                                align={'start'}
-                                justify={'space-between'}>
-                                <Checkbox>Remember me</Checkbox>
-                                <Text color={'blue.400'}>Forgot password?</Text>
+                <form onSubmit={props.handleSignIn}>
+                    <Box
+                        rounded={'lg'}
+                        bg={useColorModeValue('white', 'gray.700')}
+                        boxShadow={'lg'}
+                        p={8}>
+                        <Stack spacing={4}>
+                            <FormControl id="email">
+                                <FormLabel>Email address</FormLabel>
+                                <Input
+                                    type="email"
+                                    placeholder='Enter your email'
+                                    value={props.username}
+                                    onChange={e => props.updateUsername(e.target.value)}
+                                />
+                            </FormControl>
+                            <FormControl id="password">
+                                <FormLabel>Password</FormLabel>
+                                <Input
+                                    type="password"
+                                    value={props.password}
+                                    onChange={e => props.updatePassword(e.target.value)}
+                                />
+                            </FormControl>
+                            <Stack spacing={10}>
+                                <Stack
+                                    direction={{ base: 'column', sm: 'row' }}
+                                    align={'start'}
+                                    justify={'space-between'}>
+                                    {/* <Checkbox>Remember me</Checkbox>
+                                    <Text color={'blue.400'}>Forgot password?</Text> */}
+                                </Stack>
+                                <Button
+                                    bg={'blue.400'}
+                                    type={'submit'}
+                                    color={'white'}
+                                    _hover={{
+                                        bg: 'blue.500',
+                                    }}>
+                                    Sign in
+                                </Button>
                             </Stack>
-                            <Button
-                                bg={'blue.400'}
-                                color={'white'}
-                                _hover={{
-                                    bg: 'blue.500',
-                                }}>
-                                Sign in
-                            </Button>
                         </Stack>
-                    </Stack>
-                </Box>
+                    </Box>
+                </form>
             </Stack>
         </Flex>
     )
