@@ -8,7 +8,7 @@
       "timeEnd": 20,
       "bookings": [
         {
-          "time": "2024-02-12T11:30:00.000Z",
+          "time": "2024-02-13T11:30:00.000Z",
           "duration": 2,
           "user": {
             "firstName": "Admin",
@@ -20,7 +20,7 @@
           }
         },
         {
-          "time": "2024-02-12T14:30:00.000Z",
+          "time": "2024-02-13T14:30:00.000Z",
           "duration": 2,
           "user": {
             "firstName": "Admin",
@@ -34,7 +34,7 @@
 
         {
           "time": "2024-02-15T08:00:00.000Z",
-          "duration": 4,
+          "duration": 3,
           "user": {
             "firstName": "Alice",
             "lastName": "Johnson",
@@ -45,8 +45,8 @@
           }
         },
         {
-          "time": "2024-02-17T09:30:00.000Z",
-          "duration": 1,
+          "time": "2024-02-15T13:30:00.000Z",
+          "duration": 4,
           "user": {
             "firstName": "Bob",
             "lastName": "Smith",
@@ -56,10 +56,22 @@
             "email": "bob@example.com"
           }
         },
+        {
+          "time": "2024-02-15T10:00:00.000Z",
+          "duration": 4,
+          "user": {
+            "firstName": "Alex",
+            "lastName": "Crow",
+            "role": "STANDARD",
+            "luxID": "user124",
+            "id": "user12",
+            "email": "bob@example.com"
+          }
+        },
 
         {
-          "time": "2024-02-16T10:00:00.000Z",
-          "duration": 1,
+          "time": "2024-02-15T18:00:00.000Z",
+          "duration": 3,
           "user": {
             "firstName": "Carol",
             "lastName": "Davis",
@@ -70,8 +82,8 @@
           }
         },
         {
-          "time": "2024-02-18T11:30:00.000Z",
-          "duration": 1,
+          "time": "2024-02-16T10:30:00.000Z",
+          "duration": 2,
           "user": {
             "firstName": "Dave",
             "lastName": "Wilson",
@@ -83,8 +95,8 @@
         },
 
         {
-          "time": "2024-02-19T12:00:00.000Z",
-          "duration": 1,
+          "time": "2024-02-16T12:00:00.000Z",
+          "duration": 2,
           "user": {
             "firstName": "Eve",
             "lastName": "Brown",
@@ -95,8 +107,8 @@
           }
         },
         {
-          "time": "2024-02-21T13:30:00.000Z",
-          "duration": 1,
+          "time": "2024-02-17T15:30:00.000Z",
+          "duration": 2,
           "user": {
             "firstName": "Frank",
             "lastName": "Miller",

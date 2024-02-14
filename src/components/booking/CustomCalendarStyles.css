@@ -60,7 +60,7 @@
   display: flex;
   height: 44px;
   margin-bottom: 1em;
-  color: #2463eb;
+  color: #000;
   border-radius: 10px;
   overflow: hidden;
   font-weight: 700;
@@ -80,5 +80,5 @@
 .react-calendar__navigation button:enabled:hover,
 .react-calendar__navigation button:enabled:focus {
   background-color: #f9f9f9;
-  color: #2463eb;
+  color: #222;
 }
