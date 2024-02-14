@@ -1,0 +1,54 @@
+mutation CreateUser(
+  $firstName: String!
+  $lastName: String!
+  $email: String!
+  $luxId: String!
+  $password: String!
+) {
+  createUser(
+    firstName: $firstName
+    lastName: $lastName
+    email: $email
+    luxID: $luxId
+    password: $password
+  ) {
+    email
+    firstName
+    id
+    lastName
+    luxID
+    role
+  }
+}
+
+mutation DeleteUser($userId: ID!) {
+  deleteUser(userID: $userId) {
+    email
+    firstName
+    lastName
+    id
+    luxID
+    role
+  }
+}
+
+mutation UpdateUser(
+  $userId: ID!
+  $firstName: String
+  $lastName: String
+  $password: String
+) {
+  updateUser(
+    userID: $userId
+    firstName: $firstName
+    lastName: $lastName
+    password: $password
+  ) {
+    email
+    firstName
+    id
+    lastName
+    luxID
+    role
+  }
+}

@@ -1,14 +1,25 @@
-'use client';
+"use client";
 
-import { BooksDocument, BooksQuery, BooksQueryVariables } from "@/graphql/__generated__/types";
-import { useQuery } from "@apollo/client";
-import { useEffect } from "react";
+import FullScreenLoading from "@/components/utils/Loading";
+import { useSession } from "next-auth/react";
+import { redirect } from "next/navigation";
+import AdminBooking from "@/components/booking/index";
 
 export default function Home() {
-  const { data, loading } = useQuery<BooksQuery, BooksQueryVariables>(BooksDocument)
+  const { data: session, status } = useSession({
+    required: true,
+    onUnauthenticated() {
+      return redirect("/auth");
+    },
+  });
+
+  if (status == "loading") {
+    return <FullScreenLoading />;
+  }
+
   return (
     <>
-      <h1>welcome</h1>
+      <AdminBooking />
     </>
   );
 }

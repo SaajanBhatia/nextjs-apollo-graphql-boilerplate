@@ -1,0 +1,29 @@
+query User($userId: ID!) {
+  user(id: $userId) {
+    id
+    firstName
+    lastName
+    email
+    luxID
+    bookingsMade {
+      id
+      time
+      duration
+      room {
+        name
+        id
+      }
+    }
+  }
+}
+
+query Users {
+  users {
+    id
+    email
+    luxID
+    firstName
+    lastName
+    role
+  }
+}

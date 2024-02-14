@@ -1,0 +1,39 @@
+mutation Mutation($roomId: ID!, $status: Boolean!) {
+  updateRoomStatus(roomID: $roomId, status: $status) {
+    active
+    id
+    name
+    timeEnd
+    timeStart
+  }
+}
+
+mutation CreateNewRoom(
+  $name: String!
+  $active: Boolean!
+  $timeStart: Float!
+  $timeEnd: Float!
+) {
+  createNewRoom(
+    name: $name
+    active: $active
+    timeStart: $timeStart
+    timeEnd: $timeEnd
+  ) {
+    active
+    id
+    name
+    timeEnd
+    timeStart
+  }
+}
+
+mutation DeleteRoom($roomId: ID!) {
+  deleteRoom(roomID: $roomId) {
+    active
+    id
+    name
+    timeEnd
+    timeStart
+  }
+}

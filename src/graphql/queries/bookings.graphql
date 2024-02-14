@@ -1,0 +1,39 @@
+query GetDateBookings($date: String!) {
+  getDateBookings(date: $date) {
+    id
+    user {
+      id
+      firstName
+      lastName
+      email
+      luxID
+      role
+    }
+    time
+    duration
+    room {
+      id
+      name
+      active
+    }
+    userId
+    roomId
+  }
+}
+
+query GetSingleBooking($bookingId: ID!) {
+  getSingleBooking(bookingID: $bookingId) {
+    id
+    user {
+      email
+      luxID
+      firstName
+      lastName
+    }
+    time
+    duration
+    room {
+      name
+    }
+  }
+}

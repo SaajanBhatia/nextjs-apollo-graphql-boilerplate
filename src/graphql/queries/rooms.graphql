@@ -1,0 +1,32 @@
+query GetAllRooms {
+  getAllRooms {
+    id
+    name
+    active
+    timeStart
+    timeEnd
+  }
+}
+
+query GetSingleRoom($roomId: ID!, $dateFrom: String!, $dateTo: String!) {
+  getSingleRoom(roomID: $roomId, dateFrom: $dateFrom, dateTo: $dateTo) {
+    active
+    bookings {
+      duration
+      id
+      time
+      user {
+        email
+        firstName
+        id
+        lastName
+        luxID
+        role
+      }
+    }
+    id
+    name
+    timeEnd
+    timeStart
+  }
+}

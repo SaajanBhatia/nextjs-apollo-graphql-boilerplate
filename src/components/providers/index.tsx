@@ -1,9 +1,13 @@
 'use client';
 
 import { FC, ReactNode } from 'react';
-import { ApolloProvider } from '@apollo/client';
+
+import { ChakraProvider } from '@chakra-ui/react'
+import { CacheProvider } from '@chakra-ui/next-js';
+import { SessionProvider } from 'next-auth/react';
 
 import { ApolloWrapper } from '@/lib/apollo/client';
+import theme from './theme';
 
 interface LayoutProps {
     children: ReactNode
@@ -12,9 +16,15 @@ interface LayoutProps {
 export const Providers: FC<LayoutProps> = ({ children }) => {
     return (
         <>
-            <ApolloWrapper>
-                {children}
-            </ApolloWrapper>
+            <SessionProvider>
+                <ApolloWrapper>
+                    {/* <CacheProvider> */}
+                        <ChakraProvider theme={theme}>
+                            {children}
+                        </ChakraProvider>
+                    {/* </CacheProvider> */}
+                </ApolloWrapper>
+            </SessionProvider>
         </>
     )
 }

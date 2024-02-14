@@ -1,0 +1,46 @@
+mutation CreateNewBooking(
+  $userId: ID!
+  $time: String!
+  $duration: Float!
+  $roomId: String!
+) {
+  createNewBooking(
+    userID: $userId
+    time: $time
+    duration: $duration
+    roomID: $roomId
+  ) {
+    id
+    user {
+      email
+      luxID
+      firstName
+      lastName
+    }
+    time
+    duration
+    room {
+      name
+    }
+  }
+}
+
+mutation UpdateBooking($bookingId: ID!) {
+  updateBooking(bookingID: $bookingId) {
+    id
+    time
+    duration
+    userId
+    roomId
+  }
+}
+
+mutation Deletebooking($bookingId: ID!) {
+  deletebooking(bookingID: $bookingId) {
+    id
+    time
+    duration
+    userId
+    roomId
+  }
+}
