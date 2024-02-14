@@ -6,30 +6,7 @@ import Calendar from "react-calendar";
 import "./CustomCalendarStyles.css";
 import { Box, Heading, Text, Flex } from "@chakra-ui/react";
 import { formatDistanceToNowStrict, add, format, isToday, isTomorrow, parseISO } from "date-fns";
-
-interface User {
-  firstName: string;
-  lastName: string;
-  role: string;
-  luxID: string;
-  id: string;
-  email: string;
-}
-
-interface Booking {
-  time: string; // Or 'Date' if you convert to Date objects
-  duration: number;
-  user: User;
-}
-
-interface Room {
-  id: string;
-  name: string;
-  active: boolean;
-  timeStart: number;
-  timeEnd: number;
-  bookings: Booking[];
-}
+import { Booking, User } from "@/graphql/__generated__/types";
 
 export default function AdminBooking() {
   const [date, setDate] = useState(new Date());
