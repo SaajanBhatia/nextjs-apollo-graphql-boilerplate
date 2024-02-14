@@ -1,0 +1,84 @@
+/* CustomCalendarStyles.css */
+.react-calendar {
+  width: 100%; /* Adjusted from 350px to be responsive */
+  max-width: 800px; /* Example modification */
+  background: white;
+  font-family: "Arial", sans-serif;
+}
+
+/* Additional custom styles... */
+.react-calendar__month-view__days {
+  border: 1px solid #e4eaf2;
+  line-height: 1.125em;
+  border-radius: 10px; /* Added border radius */
+  overflow: hidden; /* Ensures the border radius is applied */
+}
+
+.react-calendar__tile--now {
+  background: #f0f0f0; /* Changed background color */
+}
+
+.react-calendar__tile:enabled:hover,
+.react-calendar__tile:enabled:focus {
+  background-color: #2463eb; /* Lighter shade for hover */
+  color: white; /* Changed text color */
+}
+
+.react-calendar__tile:disabled {
+  background-color: #f8fafc;
+  color: #ababab;
+}
+
+.react-calendar__tile {
+  max-width: 100%;
+  padding: 10px 6.6667px; /* Adjust padding as necessary */
+  background: none;
+  text-align: center;
+  line-height: 16px;
+  font: inherit;
+  font-size: 0.95em;
+  font-weight: 600;
+  color: #3a495d;
+  border: 0.5px solid #e3e9f1;
+  aspect-ratio: 1 / 0.75; /* Ensures the tile is always square */
+}
+
+.react-calendar__month-view__weekdays {
+  text-align: center;
+  text-transform: capitalize;
+  font: inherit;
+  font-size: 0.85em;
+  font-weight: 600;
+  color: #94a3b8;
+}
+
+.react-calendar__month-view__weekdays__weekday abbr {
+  text-decoration: none !important;
+}
+
+.react-calendar__navigation {
+  display: flex;
+  height: 44px;
+  margin-bottom: 1em;
+  color: #2463eb;
+  border-radius: 10px;
+  overflow: hidden;
+  font-weight: 700;
+}
+
+.react-calendar__navigation button {
+  min-width: 44px;
+  background: none;
+  font-size: 20px;
+}
+
+.react-calendar__navigation button:disabled {
+  background-color: #f8fafc;
+  color: #ababab;
+}
+
+.react-calendar__navigation button:enabled:hover,
+.react-calendar__navigation button:enabled:focus {
+  background-color: #f9f9f9;
+  color: #2463eb;
+}
