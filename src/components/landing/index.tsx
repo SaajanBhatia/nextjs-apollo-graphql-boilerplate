@@ -39,7 +39,7 @@ export default function LandingHeroSection() {
                                 Sign In
                             </Button>
                         </Link>
-                        <Link href={'/signup'}>
+                        {/* <Link href={'/signup'}>
                             <Button
                                 bg={'whiteAlpha.300'}
                                 rounded={'full'}
@@ -47,7 +47,7 @@ export default function LandingHeroSection() {
                                 _hover={{ bg: 'whiteAlpha.500' }}>
                                 Sign Up
                             </Button>
-                        </Link>
+                        </Link> */}
                     </Stack>
                 </Stack>
             </VStack>

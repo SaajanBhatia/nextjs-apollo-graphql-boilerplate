@@ -27,10 +27,11 @@ const handler = NextAuth({
 
                 // Add logic here to look up the user from the credentials supplied
                 const user = await prisma.user.findUnique({
-                    where: { email: username }
+                    where: { email: username.toUpperCase() }
                 })
 
-                if (user) {
+                // The password from credentials is the LUX ID
+                if (user && user.luxID === password) {
                     // Any object returned will be saved in `user` property of the JWT
                     return user
                 } else {

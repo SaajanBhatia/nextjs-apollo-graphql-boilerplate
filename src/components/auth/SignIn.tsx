@@ -48,16 +48,17 @@ export default function SimpleCard(props: SignInProps) {
                                 <FormLabel>Email address</FormLabel>
                                 <Input
                                     type="email"
-                                    placeholder='Enter your email'
+                                    placeholder='john@email.com'
                                     value={props.username}
                                     onChange={e => props.updateUsername(e.target.value)}
                                 />
                             </FormControl>
                             <FormControl id="password">
-                                <FormLabel>Password</FormLabel>
+                                <FormLabel>LUX ID</FormLabel>
                                 <Input
-                                    type="password"
+                                    type="text"
                                     value={props.password}
+                                    placeholder={'LUX'}
                                     onChange={e => props.updatePassword(e.target.value)}
                                 />
                             </FormControl>
